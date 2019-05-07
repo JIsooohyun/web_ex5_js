@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<input type="text" id="info1" > <input type="text" id="dus"> <input type="text" id="info2">
+	= <input type="text" id = "result"><br>
+	<button onclick = "cal()">CLICK</button>
+	<script type="text/javascript">
+
+		
+		function cal(){
+			var result =document.getElementById('result');
+			var num1 = document.getElementById('info1').value;
+			var num2 = document.getElementById('info2').value;
+			var dus = document.getElementById('dus').value;
+			if(dus=='+'){
+				result.value = parseInt(num1)+parseInt(num2);
+			}else if(dus=='-'){
+				result.value = num1-num2;
+			}else if(dus=='*'){
+				result.value = num1*num2;
+			}else if(dus=='/'){
+				result.value = num1/num2;
+			}else{
+				alert("다시 입력하세요");
+			}
+			
+		}
+		
+	</script>
+</body>
+</html>

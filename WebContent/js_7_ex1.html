@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	#d1{
+		width: 100px;
+		height: 100px;
+		background-color: red;
+		
+	}
+</style>
+</head>
+<body>
+	<div id = "d1"></div>
+	
+	<div>
+		<button onclick="f1()">RIGHT</button>
+	</div>
+	<script type="text/javascript">
+	var m = 0;
+		function f1(){
+			m=m+100;
+			var d = document.getElementById("d1");
+			d.style.marginLeft=m+"px";
+		}
+	</script>
+</body>
+</html>

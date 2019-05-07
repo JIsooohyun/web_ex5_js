@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<img alt="앨범1" src="./images/album1-1.png" id="i1" class="c1" title="t1">
+	<br>
+	<button onclick="f1()">CLICK</button>
+	<button onclick="f2()">CHANGE</button>
+	<button onclick="f4()">Toggle</button>
+	<script type="text/javascript">
+		function f1(){
+			var i1 = document.getElementById('i1');
+			//attribute 가지고 오기
+			alert(i1.getAttribute("alt"));
+			
+			//attribute 변경이나 추가할 때
+			//il.setAttribute("속성명", "값");
+			var f1 = document.getElementById('i1').id;
+			alert(f1);
+			f1 = document.getElementById('i1').className;
+			alert(f1);
+			f1 = document.getElementById('i1').alt;
+			alert(f1);
+			f1 = document.getElementById('i1').title;
+			alert(f1);
+			f1 = document.getElementById('i1').src;
+			alert(f1);
+		}
+		
+		function f2(){
+			var il = document.getElementById('i1');
+			il.setAttribute("src", "./images/album1-2.png");
+			
+		}
+		
+		function f3(){
+			var il=document.getElementById('i1');
+			if(il.title=="t1"){
+				il.src = "./images/album1-2.png";
+				il.title = "t2";
+			}else{
+				il.src="./images/album1-1.png";
+				il.title = "t1"
+			}
+		}
+		
+		var check = true;
+		function f4(){
+			
+			var i = document.getElementById('i1');
+			if(check){
+				i.src="./images/album1-2.png";
+				//check=!check;
+			}else{
+				i.src="./images/album1-1.png";
+				//check=!check
+			}
+			check=!check;
+		}
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
