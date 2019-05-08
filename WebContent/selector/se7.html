@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+
+div div{
+	float: left;
+	margin : 0 auto;
+	border: 1px solid black;
+}
+
+img {
+	width: 150px;
+	height: 150px;
+}
+
+
+.btn{
+	clear : both;
+	width : 50px;
+	height : 50px;
+	margin: 0 auto;
+}
+h3{
+	margin: 10 auto;
+	text-align: center;
+}
+input{
+	display: block;
+	margin: 0  auto;
+}
+</style>
+</head>
+<body>
+	<div>
+		<div class="menu">
+			<input type="checkbox" class="img1"><br> 
+			<img src="../images/album1-1.png" ><br> 
+			<h3 >IMAGE 1</h3>
+		</div>
+		<div class="menu">
+			<input type="checkbox" class="img1"><br> 
+			<img src="../images/album1-2.png" ><br> 
+			<h3 class="img2">IMAGE 2</h3>
+		</div>
+		<div class="menu">
+			<input type="checkbox" class="img1"><br> 
+			<img src="../images/d1.jpg" ><br>
+			<h3 class="img3">IMAGE 3</h3>
+		</div>
+		<div class="menu">
+			<input type="checkbox" class="img1"><br> 
+			<img src="../images/d2.png"><br>
+			<h3 class="img4">IMAGE 4</h3>
+		</div>
+		<div class="menu">
+			<input type="checkbox" class="img1"><br> 
+			<img src="../images/d3.png" ><br>
+			<h3 class="img5">IMAGE 5</h3>
+		</div>
+	</div>
+		
+	<div class="btn">
+		<button onclick="go()">CLICK</button>
+	</div>
+	<hr style="1px">
+	<div id="inp" ></div>
+	<script type="text/javascript">
+	var inp = document.getElementById('inp');
+	var img1 = document.getElementsByClassName('img1');
+	var menu = document.getElementsByClassName('menu');
+	
+		function go() {
+			var result="";
+			for(var i=0; i<menu.length; i++){
+				if(img1[i].checked){
+					result= result+'<div class="menu">';
+					result+=menu[i].innerHTML;
+					result+='</div>';
+				}
+				inp.innerHTML = result;
+			}
+		}
+	</script>
+</body>
+</html>

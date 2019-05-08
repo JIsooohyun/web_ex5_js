@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	A<input type="checkbox" class="c1" onclick="go()"> 
+	1<input type="checkbox" class="c1" onclick="ch()"> 
+	2<input type="checkbox" class="c1" onclick="ch()"> 
+	3<input type="checkbox" class="c1" onclick="ch()">
+
+	<script type="text/javascript">
+		var c1 = document.getElementsByClassName('c1');
+	
+		function go() {
+			if(c1[0].checked){
+				for(var i=1; i<c1.length; i++){
+					c1[i].checked=true;
+				}
+			}
+			if(!c1[0].checked){
+				for(var i=1; i<c1.length; i++){
+					c1[i].checked=false;
+				}
+			}
+		}
+		function ch(){
+			var result=true;
+			for(var i=1; i<c1.length; i++){
+				if(!c1[i].checked){
+					result=false;
+					break;
+				}
+			}
+			c1[0].checked=result;
+		}
+		function go1() {
+			var count=0;
+			for(var i=1; i<c1.length; i++){
+				if(c1[i].checked){
+					count=count+1;
+				}
+				if(count==c1.length-1){
+					c1[0].checked=true;
+				}else{
+					c1[0].checked=false;
+				}
+			}
+		}
+	
+	</script>
+</body>
+</html>

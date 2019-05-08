@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	.c1{
+		width: 100px;
+		height: 100px;
+		background-color: red;
+	}
+</style>
+</head>
+<body>
+	<div id="d1" class="c1" onclick="go2()">
+		<h1>JavaScript Test
+			<p>Fancy</p>
+		</h1>
+	</div>
+	<button onclick="go()">CLICK</button>
+	
+	
+<script type="text/javascript">
+	function go2(){
+		var d1 = document.getElementById("d1");
+		var value = d1.innerText; //변수
+		alert(value);
+		value = d1.innerHTML;
+		alert(value);  //html코드 포함해서 가져온다. 
+	}
+	function go(){
+		//버튼태그가 나와있으서 실행이 가능하다.
+		var d1 = document.getElementById("d1");  //div전체를 가르킨다.
+		//1. d1.속성명  (class는 안된다.)
+		//2. d2.getAttribute("속성명")
+		var value = d1.getAttribute("class"); //class에 대한 속성명을 가지고와라
+		d1.innerText = "jjjj"; // 그럼 그전에 썼던 태그가 통째로 없어진다. (덮어씌운다.)
+		d1.innerHTML; //innerHTML은 변수이다. 
+	}
+	
+/* 	//head사이에 넣으면 이 스크립트가 안돌아간다.
+	var d1 = document.getElementById("d1");  //div전체를 가르킨다.
+	//1. d1.속성명  (class는 안된다.)
+	//2. d2.getAttribute("속성명")
+	var value = d1.getAttribute("class"); //class에 대한 속성명을 가지고와라
+	alert(value);
+	alert(typeof(value)); */
+</script>
+</body>
+</html>

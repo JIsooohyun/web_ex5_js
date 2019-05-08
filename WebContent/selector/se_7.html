@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	.result {
+		width:850px;
+		margin: 0 auto;
+	}
+	.box {
+		width: 112px;
+		float: left;
+		margin-right:10px;
+		
+		padding: 20px;
+		padding-bottom: 0px;
+		border: 1px solid gray;
+	}
+	.box:last-child{
+		margin-right: 0px;
+	}
+	.box_check, .box_img, .box_text {
+		text-align: center;
+	}
+	
+	.box_check {
+		margin-bottom: 20px;
+	}
+	
+	.box_text {
+		height: 50px;
+		line-height: 50px;	
+		border-top: 1px solid gray;
+		
+	}
+	
+	#btn {
+		clear:both;
+		padding-top: 20px;		
+	}
+	
+</style>
+</head>
+<body>
+	<div class="result">
+		<div class="box">
+			<div class="box_check">
+				<input type="checkbox" class="ch" title="c1">
+			</div>
+			
+			<div class="box_copy" id="c1">
+			
+				<div class="box_img">
+					<img src="../images/icon1.png">
+				</div>
+				
+				<h4 class="box_text">레킹볼</h4>
+			</div>
+			
+		</div>
+		<div class="box">
+			<div class="box_check">
+				<input type="checkbox" class="ch" title="c2">
+			</div>
+			<div class="box_copy" id="c2">
+				<div class="box_img">
+					<img src="../images/icon2.png">
+				</div>
+				
+				<h4 class="box_text">메이</h4>
+			</div>
+			
+		</div>
+		<div class="box">
+			<div class="box_check">
+				<input type="checkbox" class="ch" title="c3">
+			</div>
+			<div class="box_copy" id="c3">
+				<div class="box_img">
+					<img src="../images/icon3.png">
+				</div>
+				
+				<h4 class="box_text">트레이서</h4>
+			</div>
+		</div>
+		<div class="box">
+			<div class="box_check">
+				<input type="checkbox" class="ch" title="c4">
+			</div>
+			<div class="box_copy" id="c4">
+				<div class="box_img">
+					<img src="../images/icon4.png">
+				</div>
+				
+				<h4 class="box_text">토르비욘</h4>
+			</div>
+		</div>
+		<div class="box">
+			<div class="box_check">
+				<input type="checkbox" class="ch" title="c5">
+			</div>
+			<div class="box_copy" id="c5">
+				<div class="box_img">
+					<img src="../images/icon5.png">
+				</div>
+				
+				<h4 class="box_text">파라</h4>
+			</div>
+		</div>
+		
+		
+	<div id="btn">
+		<button onclick="go()">CLICK</button>
+	</div>
+		
+	</div>
+	
+	<div class="result">
+		
+	</div>
+	<script type="text/javascript">
+		var ch = document.getElementsByClassName("ch")
+		var result = document.getElementsByClassName("result");
+		function go() {
+			var data='';
+			for(var i=0;i<ch.length;i++){
+				if(ch[i].checked){
+					data=data+'<div class="box">';
+					data=data+document.getElementById(ch[i].title).innerHTML;
+					data=data+'</div>';
+				}
+					
+			}
+			result[1].innerHTML=data;
+		}
+		
+	
+		/* var ch = document.getElementsByClassName("ch");
+		var bc = document.getElementsByClassName("box_copy");
+		var result = document.getElementsByClassName("result");
+		function go() {
+			var data='';
+			for(var i=0;i<ch.length;i++){
+				if(ch[i].checked){
+					data=data+'<div class="box">';
+					data=data+bc[i].innerHTML;
+					data=data+'</div>';
+				}
+			}
+			result[1].innerHTML=data;
+			
+		} */
+	</script>
+</body>
+</html>

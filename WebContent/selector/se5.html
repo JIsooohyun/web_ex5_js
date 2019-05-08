@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+#lun {
+	
+}
+
+#dinn {
+	display: none;
+}
+</style>
+</head>
+<body>
+	<div>
+		점심<input type="radio" class="bab" value="lun" name="bab" checked="checked">저녁<input
+			type="radio" class="bab" value="dinn" name="bab"><br>
+		<button onclick="go()">CLICK</button>
+	</div>
+	<div id="lun">
+		<p>김치찌개</p>
+		<p>짜장면</p>
+		<p>도시락</p>
+	</div>
+	<div id="dinn">
+		<p>햄버거</p>
+		<p>피자</p>
+		<p>치킨</p>
+	</div>
+	<script type="text/javascript">
+		function go() {
+			var bab = document.getElementsByClassName("bab");
+			var lun = document.getElementById('lun');
+			var dinn = document.getElementById('dinn');
+
+			if(bab[0].checked){
+				dinn.style.display="none";
+				lun.style.display="block";
+			}else{
+				dinn.style.display="block";
+				lun.style.display="none";
+			}
+
+		}
+	</script>
+</body>
+</html>

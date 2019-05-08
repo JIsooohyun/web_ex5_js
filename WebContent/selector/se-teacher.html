@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+div {
+	float: left;
+}
+
+img {
+	width: 150px;
+	height: 150px;
+}
+</style>
+</head>
+<body>
+	<div class="result">
+		<div class="box">
+			<div class="box_check">
+				<input type="checkbox" class="ch">
+			</div>
+			<div class="box-copy">
+				<div class="box_img">
+					<img src="../images/album1-1.png">
+				</div>
+				<h4>IMAGE 1</h4>
+			</div>
+		</div>
+		<div class="box">
+			<div class="box_check">
+				<input type="checkbox" class="ch">
+			</div>
+			<div class="box-copy">
+				<div class="box_img">
+					<img src="../images/album1-2.png">
+				</div>
+				<h4>IMAGE 1</h4>
+			</div>
+		</div>
+		<div class="box">
+			<div class="box_check">
+				<input type="checkbox" class="ch">
+			</div>
+			<div class="box-copy">
+				<div class="box_img">
+					<img src="../images/d1.jpg">
+				</div>
+				<h4>IMAGE 1</h4>
+			</div>
+		</div>
+		<div class="box">
+			<div class="box_check">
+				<input type="checkbox" class="ch">
+			</div>
+			<div class="box-copy">
+				<div class="box_img">
+					<img src="../images/d2.png">
+				</div>
+				<h4>IMAGE 1</h4>
+			</div>
+		</div>
+		<div class="box">
+			<div class="box_check">
+				<input type="checkbox" class="ch">
+			</div>
+			<div class="box-copy">
+				<div class="box_img">
+					<img src="../images/d3.png">
+				</div>
+				<h4>IMAGE 1</h4>
+			</div>
+		</div>
+	</div>
+	<div id="btn">
+		<button onclick="go()">CLICK</button>
+	</div>
+
+	<div class="result"></div>
+	<script type="text/javascript">
+		var ch = document.getElementsByClassName("ch");
+		var bc = document.getElementsByClassName("box-copy");
+		var result = document.getElementsByClassName("result");
+		
+		function go() {
+			var data = '';
+			for (var i = 0; i < ch.length; i++) {
+				if (ch[i].checked) {
+					data = data + '<div class="box">';
+					data = data + bc[i].innerHTML;
+					data = data + '</div>'
+				}
+			}
+			result[1].innerHTML = data;
+		}
+	</script>
+</body>
+</html>

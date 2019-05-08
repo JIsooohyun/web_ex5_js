@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+td {
+	background-color: red;
+	width: 100px;
+	height: 100px;
+}
+.c1{
+	width: 100px;
+	border-collapse: collapse;
+
+}
+.d1{
+	height: 30px;
+	border: 1px solid black;
+}
+</style>
+</head>
+<body>
+	<div>
+		ROW<input type="text" id="row"> COLUMN<input type="text"
+			id="col">
+		<button onclick="te()" id="d1">CLICK</button>
+	</div>
+	<div id="d2">
+		
+
+	</div>
+	<script type="text/javascript">
+	
+		function te(){
+			var row = document.getElementById('row').value;
+			var col = document.getElementById('col').value;
+			var d2 = document.getElementById('d2');
+			var result = '<table class="c1">';
+			
+			for(var i=0; i<row; i++){
+				result=result+'<tr>';
+					for(var j=0; j<col; j++){
+						result=result+'<td class="d1">
+						result=result+'</td>';
+					}
+				result=result+'</tr>';
+			}
+			result = result+'</table>';
+			d2.innerHTML = result;
+			
+		}
+		function go() {
+			var row = document.getElementById('row').value;
+			var col = document.getElementById('col').value;
+			
+			var d1 = document.getElementById('d1');
+			var d2 = document.getElementById('d2');
+			var result='';
+			for(var i=0; i<row; i++){
+				
+				result=result+'<tr>'
+				for(var j=0; j<col; j++){
+					result = result+'<td></td>'
+				}
+				result=result+'</tr>'
+			}
+			d2.innerHTML = '<table>'+result+'</table>'
+			
+		}
+		
+		
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div id="d1"></div>
+	<button onclick="go()">CLICK</button>
+	<div>
+		<input type="text" id="d2">
+		<button onclick="go2()">CLICK2</button>
+	</div>
+	<script type="text/javascript">
+	
+	function go2() {
+		var d2 = document.getElementById("d2");
+		var inp = d2.value;  //value값은 string타입
+		go(inp);
+	}
+	
+		function go(inp) {
+			var d1 = document.getElementById("d1");
+			
+			for(var i=0; i<parseInt(inp); i++){
+				d1.innerHTML= d1.innerHTML+'<input type="text">'
+			}
+		}
+		
+	</script>
+</body>
+</html>

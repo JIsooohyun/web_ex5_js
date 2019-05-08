@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div>
+		a<input type="radio" name="r" class="r1" id="d1" value="a">
+		b<input type="radio" name="r" checked="checked" value="b" class="r1" id="d2">  <!-- checked 가 되어 있으면 true로 표시된다. -->
+		c<input type="radio" name="r" class="r1" id="d3" value="c">
+		d<input type="radio" name="r" class="r1" id="d4" value="d">
+	</div>
+	<button onclick="go()">CLICK</button>
+	<script type="text/javascript">
+	
+		function go() {
+			var r1=document.getElementsByClassName("r1");//결과물은 배열이 나온다.
+		
+			for(var i=0; i<r1.length; i++){
+				if(r1[i].checked){ //r1[i].checked값이 ture이기 때문에 ==을 해주지 않아도 된다. 
+					alert(r1[i].value);
+					break;
+				}
+				
+			}
+		}
+	</script>
+</body>
+</html>
