@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload = function(){
+		var btn = document.getElementById("btn");
+		var result = document.getElementById('result');
+		var btn1 = document.getElementById("btn1");  //null값이 나오기 때문에 이벤트를 걸 수 없다. 
+		
+		btn.addEventListener("click", function(){
+			result.innerHTML = '<button id="btn1">CLICK</button>';
+		});
+		result.addEventListener("click",function(){
+			alert("test");
+		});
+	}
+</script>
+<style type="text/css">
+	#btn1{
+		background-color: red;
+	}
+</style>
+</head>
+<body>
+	<button id="btn">CLICK</button>
+	<div id="result"></div>
+</body>
+</html>

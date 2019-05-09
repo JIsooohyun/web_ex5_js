@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload = function(){
+		var btn1 = document.getElementById("btn1");
+		var btn2 = document.getElementById("btn2");
+		var result = document.getElementById('result');
+	
+		btn2.addEventListener("keyup", function(){
+			if(btn1.value == btn2.value){
+				result.innerHTML = "OK"	
+			}else{
+				result.innerHTML = "NO"	
+			}		
+		});
+	}
+</script>
+</head>
+<body>
+	<!-- addEventListener -->
+	<!--  -->
+	<p><input type="password" id="btn1"></p>
+	<p><input type="password" id="btn2"></p>
+	<div id='result'></div>
+	
+	
+</body>
+</html>

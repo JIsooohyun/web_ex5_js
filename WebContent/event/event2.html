@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload = function() {
+		var btn = document.getElementById('btn');
+		btn.addEventListener("click",go);  //다른함수를 호출할 떄는 go()라고 하지않고 함수이름만 적어준다.  go
+		function go() {
+			alert("test");
+		}
+		var b = document.getElementsByClassName('b'); //b는 앨리먼트를 담고 있는 배열이기 때문에 반복문 이용
+
+		for (var i = 0; i < b.length; i++) {
+			b[i].addEventListener("click", function() {
+				alert('class')
+			});
+		}
+	}
+</script>
+</head>
+<body>
+	<button id="btn" class="b">click</button>
+	<button id="btn" class="b">click</button>
+	<button id="btn" class="b">click</button>
+	<button id="btn" class="b">click</button>
+</body>
+</html>

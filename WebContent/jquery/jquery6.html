@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			$('#checkAll').click(function() {
+				var c = $(this).prop('checked');
+				$('.check').prop('checked', c);
+			});		
+			
+			$('.check').click(function() {
+				var c = true;
+				$('.check').each(function() {
+					if(!$(this).prop('checked')){
+						c=false;	
+					}
+				});
+				$('#checkAll').prop('checked', c);
+			});
+
+			$("#join").click(function() {
+				var c = $('#checkAll').prop('checked');
+				if(c){
+					location.href = "./jquery7.html";
+				}else{
+					alert("약관에 동의");
+				}
+			});
+		});
+		
+	</script>
+</head>
+<body>
+	<div class="container">
+  		<h2>Vertical (basic) form</h2>
+ 
+   		<div class="checkbox">
+      		<label><input type="checkbox" id="checkAll"> 전체동의</label>
+    	</div>
+    	<div class="checkbox">
+      		<label><input type="checkbox" class="check"> 동의A</label>
+    	</div>
+    	<div class="checkbox">
+      		<label><input type="checkbox" class="check"> 동의B</label>
+    	</div>
+    	<div class="checkbox">
+      		<label><input type="checkbox" class="check"> 동의C</label>
+    	</div>
+    <input type="button" class="btn btn-default" id="join" value="Join">
+</div>
+</body>
+</html>

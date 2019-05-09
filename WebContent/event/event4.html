@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload=function(){
+		var i = document.getElementById("i");  //document.fr.test와 같다.
+		var btn1 = document.getElementById("btn1");
+		document.fr.test.value="dddddd";
+		btn1.addEventListener("click", function(){
+			if(!i.value==""){
+				document.getElementById("frm").submit();  //이벤트를 실행시키려면 ()를 써준다. 이벤트라는 함수를 실행
+			}else{
+				alert("no");
+				document.getElementById("btn2").click();
+			}
+		});
+		
+	}
+</script>
+</head>
+<body>
+	<form id="frm" action="./event_ex2.html" name="fr">
+		<input type="text" name="test" id="i">
+		<input type="button" value="btn1" id="btn1">
+		<input type="submit" value="btn2" id="btn2">
+		<button> btn3</button>
+	</form>
+</body>
+</html>
