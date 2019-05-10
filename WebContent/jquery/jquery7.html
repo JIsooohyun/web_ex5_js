@@ -10,33 +10,126 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		var idConfirm=false; //중복확인체크여부
+		//새창 여는 코드
+		$('#check').click(function() {
+			open("./jquery9.html","_blank", "width=500, height=300");
+		});
+		
+		//ID 10자 미만
+		$('#id').blur(function() {
+			if($('#id').val().length>9){
+				alert("10자 미만 입력해주세요")
+			}
+		});
+		
+		//중복확인검사
+		//(1.blur  2.change)
+		$('#id').change(function() {
+			
+		});
+		
+		//PW 6글자 이상 
+		$('#pwd').keyup(function() {
+			if($('#pwd').val().length<6){
+				$('#valuecheck').html("6글자 이상 입력해주세요");
+			}else{
+				$('#valuecheck').html("OK");
+			}
+		})
+		//PW같은지 확인 
+		$('#pwcheck').keyup(function() {
+			if($('#pwcheck').val()==$('#pwd').val()){
+				$('#valuepcheck').html("ok");
+			}else{
+				$('#valuepcheck').html("비밀번호가 다릅니다.")
+			}
+		});
+		
+		
+		$('#email').keyup(function() {
+			var echeck = $('#email').val();
+			var check = echeck.indexOf("@");
+			if(check==-1){
+				$('#emailcheck').html("이메일 형식으로 입력하세요");
+			}else{
+				$('#emailcheck').html("");
+			}
+			
+		});
+		
+		
+		$('#join').click(function() {
+			var blank = true;
+			$('.form-control').each(function() {
+				if($(this).val()==""){  //꺼낸 것을 나타내줌
+					alert($(this).attr('name')+"를 빈칸없이 입력하세요");
+					blank = false;
+					return false;
+				}
+			});
+			var joincheck=true;
+			if(blank){
+				if($('#pwcheck').val()!=$('#pwd').val()){
+					alert("비밀번호가 다릅니다.");
+					joincheck=false;
+				}else if($('#pwd').val().length<6){
+					alert("비밀번호 6글자 이상 입력해주세요");
+					joincheck=false;
+				}else if(!$('#different').prop('checked')){
+					joincheck=false;
+					alert("중복확인 해주세요");
+				}
+				if(joincheck){
+					alert("회원가입성공");
+					$('#frm').submit();
+				}
+			}
+		});
+	});
+</script>
+<style type="text/css">
+	#different{
+		visibility: hidden;
+	}
+</style>
 </head>
 <body>
 	<div class="container">
 		<h2>Join form</h2>
-		<form action="/action_page.php">
+		<form action="./jquery8.html" name="jj" id="frm">
 			<div class="form-group">
 				<label for="id">Id:</label> 
-				<input type="text" class="form-control" id="id" placeholder="Enter Id" name="id">
+				<input type="text"  class="form-control" id="id" placeholder="Enter Id" name="id"> 
+				<input type="button" value="중복확인" id="check">
+				<input type="radio" id="different" >
+				<input type="hidden" id="idConfirm" value="0">
 			</div>
 			<div class="form-group">
 				<label for="pwd">Password:</label> 
-				<input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+				<input type="password"class="form-control"  id="pwd" placeholder="Enter password" name="pwd">
+				<div id="valuecheck"> </div>
 			</div>
 			
 			<div class="form-group">
 				<label for="pwd">Password:</label> 
-				<input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+				<input type="password" class="form-control"  id="pwcheck" placeholder="Enter password" name="pwd">
+				<div id="valuepcheck"> </div>
 			</div>
+			
 			<div class="form-group">
 				<label for="email">Email:</label> 
-				<input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+				<input type="email" class="form-control"  id="email" placeholder="Enter email" name="email">
+				<div id="emailcheck"></div>
 			</div>
 			<div class="form-group">
 				<label for="phone">Phone:</label> 
-				<input type="text" class="form-control" id="phone" placeholder="Enter Phone" name="phone">
+				<input type="tel" class="form-control" id="phone" placeholder="Enter Phone" name="phone">
 			</div>
-			<input type="button" class="btn btn-default" value="Join">
+			
+			<input type="button" class="btn btn-default" value="Join" id="join">
 		</form>
 	</div>
 </body>
