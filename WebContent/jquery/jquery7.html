@@ -12,7 +12,6 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <script type="text/javascript">
 	$(function() {
-		var idConfirm=false; //중복확인체크여부
 		//새창 여는 코드
 		$('#check').click(function() {
 			open("./jquery9.html","_blank", "width=500, height=300");
@@ -28,7 +27,7 @@
 		//중복확인검사
 		//(1.blur  2.change)
 		$('#id').change(function() {
-			
+			$('#idConfirm').val("0");
 		});
 		
 		//PW 6글자 이상 
@@ -82,7 +81,7 @@
 					joincheck=false;
 					alert("중복확인 해주세요");
 				}
-				if(joincheck){
+				if(joincheck && $('#idConfirm').val()=='1'){
 					alert("회원가입성공");
 					$('#frm').submit();
 				}
@@ -104,7 +103,6 @@
 				<label for="id">Id:</label> 
 				<input type="text"  class="form-control" id="id" placeholder="Enter Id" name="id"> 
 				<input type="button" value="중복확인" id="check">
-				<input type="radio" id="different" >
 				<input type="hidden" id="idConfirm" value="0">
 			</div>
 			<div class="form-group">
